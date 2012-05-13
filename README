@@ -1,0 +1,50 @@
+﻿TwitFollowersDiff
+c 2012 Anirudh Ranganath
+
+Author: Anirudh Ranganath
+http://anirudh.co.in 
+contact me at anipub at hotmail dot com
+
+Version: 1.0 created May 13 2012 (first version)
+
+Description:
+	This is a simple console application based on C# to find out who (un)followed you on twitter. But it could do more!
+
+Motivation: 
+	To learn the Twitter API and develop (mostly) production level code by someone who has very little of it. This wasn't intended to be a quick hack.
+
+Future: 
+	I do have plan to expand this(into better apps) and would like to keep it in a way where it wouldnt require oauth or private data.
+
+Contributors: 
+	As of now, it is only me, but I would love helping hands. Of course, I would like it to go beyond finding twitter follower diff and possibly as a Managed Twitter API if necessary.
+
+Usage License:
+	You may not SELL or make proprietary any product or service created using this code, or a reasonably modified version of it without an explicit written permission of the Author.
+	You may modify and re-distribute this code(without fee) for educational, hobbyist or research purposes.
+	I would appreciate if I was notified of any use in the above form. It might inspire me to write more code for this.
+
+Disclaimer: This code comes as is, without any form of guarantee. 
+
+Namespaces and Classes:
+Exceptions:
+	Contains Exceptions. Currently only USerNotFoundException exists. We would need more such as RateLimitHitException etc
+
+TwitterClasses:
+	Some static Twitter Specific Classes to help Communicate with twitter. 
+	We could have classes for profiles, lists, status etc.
+	This could serve as the base of the API
+	WebIntegration could be moved to this namespace in the future
+
+FileInteraction.cs:
+	For saving and reading follower files. 
+	Files are saved in the format handle.twFol in the executing folder
+
+WebIntegration.cs:
+	Primary Class for integrating with twitter. Currently a static class.
+	In the future, this may be moved to the TwitterClasses namespace as a key part of the API.
+	
+Program.cs:
+	The main procedure.
+	A followerLimit has been imposed to prevent hitting the rate limit.
+	Isn't as well written as the other parts of the code and needs more work, specifically in the diff function.
