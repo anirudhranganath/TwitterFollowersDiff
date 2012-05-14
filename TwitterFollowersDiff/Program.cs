@@ -164,12 +164,30 @@ namespace TwitterFollowersDiff
             {
                 Console.WriteLine("Stopped Following: ");
                 Console.WriteLine("(Accounts will be listed only if they haven't been deleted/suspended)");
-                WebInteraction.handleOfIDs(saved).ForEach(Print);
+                try
+                {
+                    WebInteraction.handleOfIDs(saved).ForEach(Print);
+                }
+                catch (Exceptions.UserNotFoundException ex)
+                {
+                    Console.WriteLine("Cheers! All those accounts stopped following you because they were all deleted or suspended!");
+                }
+                catch
+                {
+                    Console.WriteLine("Unknown error occured");
+                }
             }
             if (current.Count > 0)
             {
                 Console.WriteLine("\n\nStarted Following: ");
-                WebInteraction.handleOfIDs(current).ForEach(Print);
+                try
+                {
+                    WebInteraction.handleOfIDs(current).ForEach(Print);
+                }
+                catch
+                {
+                    Console.WriteLine("Unknown error occured");
+                }
             }
             #endregion
         }

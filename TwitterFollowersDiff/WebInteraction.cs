@@ -116,7 +116,7 @@ namespace TwitterFollowersDiff
                     }
                     else if (resp.StatusCode == HttpStatusCode.BadRequest)
                     {
-                        throw new Exception("Rate Limit Hit", ex);
+                        throw new Exception("Rate Limit Hit. You have a maximum of 150 api calls per hour. Try after an hour.", ex);
                     }
                     else
                     {
