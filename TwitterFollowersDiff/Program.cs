@@ -163,6 +163,7 @@ namespace TwitterFollowersDiff
             if (saved.Count > 0)
             {
                 Console.WriteLine("Stopped Following: ");
+                Console.WriteLine("(Accounts will be listed only if they haven't been deleted/suspended)");
                 WebInteraction.handleOfIDs(saved).ForEach(Print);
             }
             if (current.Count > 0)
